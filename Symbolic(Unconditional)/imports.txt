@@ -1,0 +1,5 @@
+hmmlearn
+mido 
+numpy
+tensorflow
+miditok
