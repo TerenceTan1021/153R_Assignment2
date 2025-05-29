@@ -279,6 +279,7 @@ def generate_music(model, tokenizer, start_tokens, condition_idx, max_len, devic
 
 # --- 6. Main Execution ---
 if __name__ == "__main__":
+    script_dir = os.path.dirname(os.path.abspath(__file__)) # Define script directory
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
@@ -291,7 +292,7 @@ if __name__ == "__main__":
 
     # User: Point this to your dataset of PIANO MIDI files.
     # All files in this folder will be treated as "general_piano".
-    base_data_path = os.path.join("c:", os.sep, "Users", "XnavX", "153R_Assignment2", "Symbolic(Conditional)", "piano_data")
+    base_data_path = os.path.join(script_dir, "piano_data")
     # Load .mid files recursively from the piano_data folder and its subdirectories
     training_midi_files = []
     for root, dirs, files in os.walk(base_data_path):
@@ -371,7 +372,7 @@ if __name__ == "__main__":
     # This file should be a short piano piece you want the model to continue.
     # It should be located in a place accessible by the script.
     # For example, you could place it in the `piano_data` folder or elsewhere.
-    motif_midi_file_path = os.path.join(base_data_path, "..", "midi_export.mid") # Example: using a file from your piano_data
+    motif_midi_file_path = os.path.join(script_dir, "midi_export.mid") # Assumes midi_export.mid is in the same directory as the script
     # motif_midi_file_path = "c:/path/to/your/chosen/motif.mid" # Or an absolute path
 
     print(f"Attempting to load motif from: {motif_midi_file_path}")
@@ -464,7 +465,7 @@ if __name__ == "__main__":
             # in a context where base_data_path might be relevant or just the CWD.
             # Let's use the global OUTPUT_MIDI_PATH directly as intended by its definition.
             
-            save_path = OUTPUT_MIDI_PATH
+            save_path = os.path.join(script_dir, OUTPUT_MIDI_PATH) # Save in the script's directory
             # If OUTPUT_MIDI_PATH is not an absolute path, and you intend it to be in the script's directory or a specific one:
             # script_dir = os.path.dirname(os.path.abspath(__file__)) # Gets directory of the script
             # save_path = os.path.join(script_dir, OUTPUT_MIDI_PATH) # Saves in the same dir as script
