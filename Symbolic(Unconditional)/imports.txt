@@ -6,4 +6,5 @@ miditok
 torch
 symusic
 midiutil
-glob
+seaborn
+pandas
