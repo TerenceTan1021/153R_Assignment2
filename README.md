@@ -1,5 +1,5 @@
 # 153R_Assignment2 Symbolic Unconditional Music Generation
-=====
+
 
 ## Introduction: Train a model and use that model to generate Lo-fi music 
 This project implements an AI-powered Lo-Fi music generator using Long Short-Term Memory (LSTM) neural networks. By analyzing patterns in a dataset of Lo-fi MIDI files, the system learns to create original, soothing musical compositions characteristic of the popular Lo-Fi hip-hop genre.
