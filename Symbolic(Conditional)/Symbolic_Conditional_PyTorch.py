@@ -443,7 +443,7 @@ if __name__ == "__main__":
                                                       target_style_idx, 
                                                       max_len=len(motif_tokens) + 500, # Generate 200 tokens *after* the motif
                                                       device=device, 
-                                                      temperature=0.9, 
+                                                      temperature=1.0, 
                                                       top_p=0.8)
     else:
         print("No valid motif tokens available or vocabulary is empty, skipping generation.")
