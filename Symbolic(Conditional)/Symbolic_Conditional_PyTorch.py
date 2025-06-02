@@ -14,14 +14,14 @@ import os # Added for path manipulation
 SEQ_LEN = 96
 EMBED_SIZE = 100
 HIDDEN_SIZE = 512
-NUM_LAYERS = 2 # Reduced from 3
+NUM_LAYERS = 1 # Reduced from 3
 DROPOUT = 0.25 # Adjusted
 LEARNING_RATE = 0.0005
 BATCH_SIZE = 128
 NUM_EPOCHS = 20 # Increased for scheduler
 VOCAB_SIZE = None # To be set after tokenizing
 CONDITION_DIM = 10 # Will be updated by len(condition_map)
-OUTPUT_MIDI_PATH = "generated_piano_composition.mid" # Changed output path
+OUTPUT_MIDI_PATH = "generated_piano_composition_SingleLayer.mid" # Changed output path
 
 # Set random seed for reproducibility
 random.seed(42)
