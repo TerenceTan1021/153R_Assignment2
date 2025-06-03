@@ -3,3 +3,8 @@ mido
 numpy
 tensorflow
 miditok
+torch
+symusic
+midiutil
+seaborn
+pandas
